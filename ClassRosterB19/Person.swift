@@ -22,8 +22,11 @@ class Person {
 	func fullName() -> String {
 		return self.firstName + self.lastName
 	}
-	func assignImage(imageName: String) {
+	func assignImage(imageName: String = "lamb") {
 		image = UIImage(named: imageName)
+	}
+	func assignImageTest(imageName: String = "lamb") -> UIImage {
+		return UIImage(named: imageName)
 	}
 	
 }

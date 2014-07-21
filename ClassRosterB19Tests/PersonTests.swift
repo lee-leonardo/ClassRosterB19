@@ -48,8 +48,12 @@ class PersonTests: XCTestCase {
 	
 	func testImage() {
 		var person = Person(firstName: "Leo", lastName: "Lee")
-		person.assignImage("lamb")
+		
+		//One can only assert values, so... either assign or return a value.
+		person.assignImage(imageName: "lamb")
 		XCTAssertNotNil(person.image, "No Image available!")
+		//The way it works with a function with a return value.
+		XCTAssertNotNil(person.assignImageTest(imageName: "lamb"), "Does not return a value")
 	}
 
 }
