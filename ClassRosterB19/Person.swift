@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 Leonardo Lee. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Person {
 	var firstName : String
 	var lastName : String
+	var image : UIImage?
 	
 	init(firstName: String, lastName: String) {
 		self.firstName = firstName
@@ -21,4 +22,8 @@ class Person {
 	func fullName() -> String {
 		return self.firstName + self.lastName
 	}
+	func assignImage(imageName: String) {
+		image = UIImage(named: imageName)
+	}
+	
 }

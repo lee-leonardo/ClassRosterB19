@@ -45,5 +45,11 @@ class PersonTests: XCTestCase {
 		var person = Person(firstName: first, lastName: last)
 		XCTAssertEqual(person.fullName(), first+last, "Full name is not matching!")
 	}
+	
+	func testImage() {
+		var person = Person(firstName: "Leo", lastName: "Lee")
+		person.assignImage("lamb")
+		XCTAssertNotNil(person.image, "No Image available!")
+	}
 
 }

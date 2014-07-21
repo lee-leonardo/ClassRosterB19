@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38687CAD197DAB8B00AF7EEB /* lamb.png in Resources */ = {isa = PBXBuildFile; fileRef = 38687CAC197DAB8B00AF7EEB /* lamb.png */; };
 		387946BE197D8777005813F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387946BD197D8777005813F5 /* AppDelegate.swift */; };
 		387946C0197D8777005813F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387946BF197D8777005813F5 /* ViewController.swift */; };
 		387946C3197D8777005813F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387946C1197D8777005813F5 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38687CAC197DAB8B00AF7EEB /* lamb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lamb.png; path = "../../../Downloads/Animal Photos/lamb.png"; sourceTree = "<group>"; };
 		387946B8197D8777005813F5 /* ClassRosterB19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassRosterB19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		387946BC197D8777005813F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		387946BD197D8777005813F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38687CAE197DAB8E00AF7EEB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				38687CAC197DAB8B00AF7EEB /* lamb.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		387946AF197D8777005813F5 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		387946BB197D8777005813F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				38687CAE197DAB8E00AF7EEB /* Image */,
 				387946BC197D8777005813F5 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -222,6 +233,7 @@
 			files = (
 				387946C3197D8777005813F5 /* Main.storyboard in Resources */,
 				387946C5197D8777005813F5 /* Images.xcassets in Resources */,
+				38687CAD197DAB8B00AF7EEB /* lamb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +443,7 @@
 				387946D6197D8777005813F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		387946D7197D8777005813F5 /* Build configuration list for PBXNativeTarget "ClassRosterB19Tests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +452,7 @@
 				387946D9197D8777005813F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
