@@ -55,5 +55,4 @@ class PersonTests: XCTestCase {
 		//The way it works with a function with a return value.
 		XCTAssertNotNil(person.assignImageTest(imageName: "lamb"), "Does not return a value")
 	}
-
 }
