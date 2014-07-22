@@ -37,13 +37,29 @@ class ViewControllerTests: XCTestCase {
 		var controller = ViewController()
 		controller.viewDidLoad()
 		var compareRoster = controller.createClassRoster()
-		
+		1
 		for var index = 0; index < compareRoster.count; index++ {
 			XCTAssertEqual(compareRoster[index].firstName, controller.classRoster[index].firstName, "Roster's are not the same!")
 			XCTAssertEqual(compareRoster[index].lastName, controller.classRoster[index].lastName, "Roster's are not the same!")
 		}
 	}
-	
-	
+	func testStringArrayFromPlist() {
+		var classRoster = [Person]()
+		var filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
+		var rosterData = NSArray(contentsOfFile: filePath)
+		
+		for var index = 0; index < rosterData.count; index++ {
+			println(rosterData[index])
+			
+//			var entry = rosterData[index] as Dictionary
+
+			
+//			var rosterEntry = stringRoster[index]
+//			println("Roster Entry Object: ", rosterEntry)
+//			var firstName = rosterEntry["firstName"]
+//			var lastName = stringRoster[index]["lastName"]
+//			var image = stringRoster[index]["image"]
+		}
+	}
 
 }

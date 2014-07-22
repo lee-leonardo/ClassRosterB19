@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-	var classRoster = [Person]()
+	var classRoster : Array<Person> = []
+	var temporaryClassRoster = [String]()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,6 +46,16 @@ class ViewController: UIViewController {
 		roster.append(Person(firstName: "Collin", lastName: "Atherton"))
 		roster.append(Person(firstName: "Alex", lastName: "Rice"))
 		roster.append(Person(firstName: "Dan", lastName: "Hoang"))
+		
+		
+//		1. Make the array an array of dictionaries... do it as HW! Its a bit more complicated than what we have atm.
+		
+//		var filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
+//		var stringRoster = NSArray(contentsOfFile: filePath)
+//		for var index = 0; index < stringRoster.count; index++ {
+//			println(stringRoster[index])
+//			temporaryClassRoster.append(stringRoster[index] as NSString)
+//		}
 		
 		for person in classRoster {
 			println(person.firstName + " " + person.lastName)
