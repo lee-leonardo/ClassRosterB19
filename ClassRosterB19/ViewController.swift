@@ -27,39 +27,38 @@ class ViewController: UIViewController {
 	
 	func createClassRoster() -> [Person] {
 		var roster = [Person]()
-		//John Clem
-		//Brad Johnson
-		//Jeff Gayle
-		//Leonardo Lee
-		//Mike Tirenin
-		//Victor Adu
-		//Kirby Shabaga
-		//Collin Atherton
-		//Alex Rice
-		//Dan Hoang
+		//John Clem, Brad Johnson, Jeff Gayle, Leonardo Lee, Mike Tirenin, Victor Adu, Kirby Shabaga, Collin Atherton, Alex Rice, Dan Hoang
 		
-		roster.append(Person(firstName: "John", lastName: "Clem"))
-		roster.append(Person(firstName: "Brad", lastName: "Johnson"))
-		roster.append(Person(firstName: "Mike", lastName: "Tirenin"))
-		roster.append(Person(firstName: "Victor", lastName: "Abu"))
-		roster.append(Person(firstName: "Kirby", lastName: "Shabaga"))
-		roster.append(Person(firstName: "Collin", lastName: "Atherton"))
-		roster.append(Person(firstName: "Alex", lastName: "Rice"))
-		roster.append(Person(firstName: "Dan", lastName: "Hoang"))
-		
-		
-//		1. Make the array an array of dictionaries... do it as HW! Its a bit more complicated than what we have atm.
-		
-//		var filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
-//		var stringRoster = NSArray(contentsOfFile: filePath)
-//		for var index = 0; index < stringRoster.count; index++ {
-//			println(stringRoster[index])
-//			temporaryClassRoster.append(stringRoster[index] as NSString)
+//		For part 4.
+//		roster.append(Person(firstName: "John", lastName: "Clem"))
+//		roster.append(Person(firstName: "Brad", lastName: "Johnson"))
+//		roster.append(Person(firstName: "Mike", lastName: "Tirenin"))
+//		roster.append(Person(firstName: "Victor", lastName: "Abu"))
+//		roster.append(Person(firstName: "Kirby", lastName: "Shabaga"))
+//		roster.append(Person(firstName: "Collin", lastName: "Atherton"))
+//		roster.append(Person(firstName: "Alex", lastName: "Rice"))
+//		roster.append(Person(firstName: "Dan", lastName: "Hoang"))
+//		
+//		for person in classRoster {
+//			println(person.firstName + " " + person.lastName)
 //		}
 		
-		for person in classRoster {
-			println(person.firstName + " " + person.lastName)
+//		For the challenge.
+		var classRoster = [Person]()
+		var filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
+		var rosterData = NSArray(contentsOfFile: filePath)
+		
+		for var index = 0; index < rosterData.count; index++ {
+			println(rosterData[index])
+//			Didn't work.
+//			var entry = rosterData[index] as Dictionary
+//			var rosterEntry = stringRoster[index]
+//			println("Roster Entry Object: ", rosterEntry)
+//			var firstName = rosterEntry["firstName"]
+//			var lastName = stringRoster[index]["lastName"]
+//			var image = stringRoster[index]["image"]
 		}
+		
 		return roster
 	}
 
