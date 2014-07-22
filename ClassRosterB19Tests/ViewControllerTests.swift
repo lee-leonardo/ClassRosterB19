@@ -35,7 +35,7 @@ class ViewControllerTests: XCTestCase {
 	
 	func testCreateArray() {
 		var controller = ViewController()
-		controller.viewDidLoad()
+		controller.classRoster = controller.createClassRoster()
 		var compareRoster = controller.createClassRoster()
 		1
 		for var index = 0; index < compareRoster.count; index++ {
@@ -46,9 +46,13 @@ class ViewControllerTests: XCTestCase {
 	func testStringArrayFromPlist() {
 		var controller = ViewController()
 		controller.viewDidLoad()
-		controller.classRoster = controller.loadRosterFromPlist()
 
 		XCTAssertNotNil(controller.classRoster, "Roster does not exist!")
+	}
+	func testTableViewImage() {
+		var controller = ViewController()
+		controller.viewDidLoad()
+		
 	}
 
 }

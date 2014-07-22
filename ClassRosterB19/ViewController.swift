@@ -8,21 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-	var classRoster : Array<Person> = []
-	var temporaryClassRoster = [String]()
+class ViewController: UIViewController, UITableViewDataSource {
 	
+	var people = Person.loadRosterFromPlist()
+	@IBOutlet var tableView : UITableView?
+
+	//These will be replaced with the tableView and plist related methods.
+	var classRoster : Array<Person> = []
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		//This is how you set it up within the code, not just in Storyboard.
+		//self.tableView!.dataSource = self
+		//self.tableView!.delegate = self
 		
-//		if classRoster.isEmpty {
-//			classRoster = createClassRoster()
-//		}
+		//if classRoster.isEmpty {
+		//classRoster = createClassRoster()
+		//}
+	}
+	override func viewWillAppear(animated: Bool) {
+		tableView?.reloadData() //Can use the unwrap, but it is less safe.
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 	
 	func createClassRoster() -> [Person] {
@@ -45,33 +54,36 @@ class ViewController: UIViewController {
 		return roster
 	}
 	
-//	Attributed to Kirby Shabaga, explanation by John Clem.
-	func loadRosterFromPlist() -> Array<Person> {
-		//For the challenge.
-		var roster = [Person]()
+	
+	override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+		let indexPath = tableView!.indexPathForSelectedRow()
+
+		if segue.identifier == "ShowDetail" {
+			let destination = segue.destinationViewController as DetailViewController
+			destination.person = people[indexPath.row]
+			tableView?.deselectRowAtIndexPath(indexPath, animated: true)
+		}
+	}
+	
+	
+//MARK: UITableViewDataSource
+	func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+		return people.count
+	}
+	func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+		var cell = tableView.dequeueReusableCellWithIdentifier("PersonCell", forIndexPath: indexPath) as UITableViewCell
+		let personForRow = people[indexPath.row]
+
+		cell.textLabel.text = personForRow.firstName
+		cell.detailTextLabel.text = personForRow.lastName
 		
-		let filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
-		let rosterData = NSArray(contentsOfFile: filePath)
-		
-//		for var index = 0; index < rosterData.count; index++ {
-//			println(rosterData[index])
-//		}
-		
-		//This next was the hump I needed to traverse. Pretty much it checks if the entry for the NSArray is a Dictionary<String,String>, this puts that into a person object, it is safe (ignoring the as String or the unwrap (just showing both ways it can be done) because of the optional as? statement in the if statement.
-		for entry in rosterData {
-			if let person = entry as? Dictionary<String, String> {
-				//Probably a bug, the other way to do it is the init the objects in the append method with a unwrap.
-				//I wrote both ways to do it (atm) because I feel that it'll be good to look at side by side.
-				let first = person["firstName"] as String
-				let last = person["lastName"]
-				roster.append(Person(firstName: first, lastName: last!))
-			}
+		//This will fire if the person has an image.
+		if let personImage = personForRow.image {
+			cell.imageView.image = personImage
 		}
 		
-		return roster
-		
+		return cell
 	}
-
 
 }
 
