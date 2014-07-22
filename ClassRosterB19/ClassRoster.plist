@@ -7,80 +7,60 @@
 		<string>John</string>
 		<key>lastName</key>
 		<string>Clem</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Brad</string>
 		<key>lastName</key>
 		<string>Johnson</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Jeff</string>
 		<key>lastName</key>
 		<string>Gayle</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Leonardo</string>
 		<key>lastName</key>
 		<string>Lee</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Mike</string>
 		<key>lastName</key>
 		<string>Tirenin</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Victor</string>
 		<key>lastName</key>
 		<string>Adu</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Kirby</string>
 		<key>lastName</key>
 		<string>Shabaga</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Collin</string>
 		<key>lastName</key>
 		<string>Atherton</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Alex</string>
 		<key>lastName</key>
 		<string>Rice</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Dan</string>
 		<key>lastName</key>
 		<string>Hoang</string>
-		<key>UIImage</key>
-		<data></data>
 	</dict>
 </array>
 </plist>
