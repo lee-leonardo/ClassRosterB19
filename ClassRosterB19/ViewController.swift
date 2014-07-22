@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 		var roster = [Person]()
 		//John Clem, Brad Johnson, Jeff Gayle, Leonardo Lee, Mike Tirenin, Victor Adu, Kirby Shabaga, Collin Atherton, Alex Rice, Dan Hoang
 		
-//		For part 4.
+		//For part 4.
 //		roster.append(Person(firstName: "John", lastName: "Clem"))
 //		roster.append(Person(firstName: "Brad", lastName: "Johnson"))
 //		roster.append(Person(firstName: "Mike", lastName: "Tirenin"))
@@ -43,14 +43,14 @@ class ViewController: UIViewController {
 //			println(person.firstName + " " + person.lastName)
 //		}
 		
-//		For the challenge.
+		//For the challenge.
 		var classRoster = [Person]()
-		var filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
-		var rosterData = NSArray(contentsOfFile: filePath)
+		let filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
+		let rosterData = NSArray(contentsOfFile: filePath)
 		
 		for var index = 0; index < rosterData.count; index++ {
 			println(rosterData[index])
-//			Didn't work.
+			//Didn't work.
 //			var entry = rosterData[index] as Dictionary
 //			var rosterEntry = stringRoster[index]
 //			println("Roster Entry Object: ", rosterEntry)

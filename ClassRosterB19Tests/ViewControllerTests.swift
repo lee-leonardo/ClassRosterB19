@@ -45,15 +45,13 @@ class ViewControllerTests: XCTestCase {
 	}
 	func testStringArrayFromPlist() {
 		var classRoster = [Person]()
-		var filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
-		var rosterData = NSArray(contentsOfFile: filePath)
+		let filePath = NSBundle.mainBundle().pathForResource("ClassRoster", ofType: ".plist")
+		let rosterData = NSArray(contentsOfFile: filePath)
 		
 		for var index = 0; index < rosterData.count; index++ {
 			println(rosterData[index])
 			
 //			var entry = rosterData[index] as Dictionary
-
-			
 //			var rosterEntry = stringRoster[index]
 //			println("Roster Entry Object: ", rosterEntry)
 //			var firstName = rosterEntry["firstName"]
