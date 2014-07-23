@@ -54,7 +54,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="jYq-tt-tBw"/>
                     <connections>
-                        <outlet property="tableView" destination="Rrc-ol-ycB" id="GSM-9y-adF"/>
+                        <outlet property="tableView" destination="Rrc-ol-ycB" id="fOG-l3-Orr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,13 +73,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9Q-Cd-v7n">
-                                <rect key="frame" x="212" y="97" width="177" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWI-X2-nok">
+                                <rect key="frame" x="256" y="116" width="177" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWI-X2-nok">
-                                <rect key="frame" x="212" y="135" width="177" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RjO-Kj-Dca">
+                                <rect key="frame" x="48" y="78" width="200" height="200"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9Q-Cd-v7n">
+                                <rect key="frame" x="256" y="78" width="177" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -89,6 +92,7 @@
                     <connections>
                         <outlet property="firstName" destination="d9Q-Cd-v7n" id="Mxr-rI-Nyh"/>
                         <outlet property="lastName" destination="pWI-X2-nok" id="K1u-pA-hyW"/>
+                        <outlet property="personImage" destination="RjO-Kj-Dca" id="hKq-LN-GsU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thc-MI-UDi" userLabel="First Responder" sceneMemberID="firstResponder"/>

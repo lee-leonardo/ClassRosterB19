@@ -11,6 +11,7 @@ import UIKit
 class Person {
 	var firstName : String
 	var lastName : String
+	var imagePath : String?
 	var image : UIImage?
 	
 	init(firstName: String, lastName: String) {
@@ -18,15 +19,18 @@ class Person {
 		self.lastName = lastName
 		
 	}
+	convenience init(firstName: String, lastName: String, imagePath: String) {
+		self.init(firstName: firstName, lastName: lastName)
+		self.imagePath = imagePath
+	}
 	
 	func fullName() -> String {
 		return self.firstName + self.lastName
 	}
-	func assignImage(imageName: String = "lamb") {
-		image = UIImage(named: imageName)
-	}
-	func assignImageTest(imageName: String = "lamb") -> UIImage {
-		return UIImage(named: imageName)
+	
+//Mark: Image, refactor out?
+	func retrieveImage() {
+		image = UIImage(named: imagePath)
 	}
 	
 	//Factory
@@ -50,7 +54,15 @@ class Person {
 				//I wrote both ways to do it (atm) because I feel that it'll be good to look at side by side.
 				let first = person["firstName"] as String
 				let last = person["lastName"]
-				roster.append(Person(firstName: first, lastName: last!))
+				
+//				
+//	This is where I am at the moment. I think it'll work, I should test it, then I should implement code in VC and DetailVC.
+//
+				if let withImagePath = person["imagePath"] as? String {
+					roster.append(Person(firstName: first, lastName: last!, imagePath: withImagePath))
+				} else {
+					roster.append(Person(firstName: first, lastName: last!))
+				}
 			}
 		}
 		

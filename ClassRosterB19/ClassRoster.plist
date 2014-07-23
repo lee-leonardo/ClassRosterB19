@@ -7,60 +7,80 @@
 		<string>John</string>
 		<key>lastName</key>
 		<string>Clem</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Brad</string>
 		<key>lastName</key>
 		<string>Johnson</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Jeff</string>
 		<key>lastName</key>
 		<string>Gayle</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Leonardo</string>
 		<key>lastName</key>
 		<string>Lee</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Mike</string>
 		<key>lastName</key>
 		<string>Tirenin</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Victor</string>
 		<key>lastName</key>
 		<string>Adu</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Kirby</string>
 		<key>lastName</key>
 		<string>Shabaga</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Collin</string>
 		<key>lastName</key>
 		<string>Atherton</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Alex</string>
 		<key>lastName</key>
 		<string>Rice</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
 		<string>Dan</string>
 		<key>lastName</key>
 		<string>Hoang</string>
+		<key>imagePath</key>
+		<string></string>
 	</dict>
 </array>
 </plist>

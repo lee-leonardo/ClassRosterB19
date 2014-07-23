@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 		super.didReceiveMemoryWarning()
 	}
 	
+//MARK: Functions
 	func createClassRoster() -> [Person] {
 		var roster = [Person]()
 		//John Clem, Brad Johnson, Jeff Gayle, Leonardo Lee, Mike Tirenin, Victor Adu, Kirby Shabaga, Collin Atherton, Alex Rice, Dan Hoang
@@ -77,10 +78,12 @@ class ViewController: UIViewController, UITableViewDataSource {
 		cell.textLabel.text = personForRow.firstName
 		cell.detailTextLabel.text = personForRow.lastName
 		
+		//Image related functionality in ViewController
+//		cell.imageView.image = UIImage(named: "lamb")
 		//This will fire if the person has an image.
-		if let personImage = personForRow.image {
-			cell.imageView.image = personImage
-		}
+//		if let personImage = personForRow.imagePath? {
+//			cell.imageView.image = UIImage(named: personImage)
+//		}
 		
 		return cell
 	}
