@@ -32,11 +32,4 @@ class DetailViewControllerTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-	func testPersonExists() {
-//		var controller = DetailViewController
-//		controller.person = Person(firstName: "Test", lastName: "Person")
-		
-//		XCTAssertNil(controller.person, "Person shouldn't exist!")
-	}
-
 }

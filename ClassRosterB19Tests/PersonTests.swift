@@ -46,12 +46,25 @@ class PersonTests: XCTestCase {
 		XCTAssertEqual(person.fullName(), first+last, "Full name is not matching!")
 	}
 	
+	func testMakePerson() {
+		//This is to test if the person I am making can have take in nil without error/
+	}
+	
 	func testImage() {
-		var person = Person(firstName: "Leo", lastName: "Lee", imagePath: "lamb")
-		XCTAssertNotNil(person.imagePath, "Does not return a value")
+		
+		var person = Person(firstName: "Leo", lastName: "Lee", imagePath: "lamb", twitter: nil, github: nil)
+		XCTAssertNotNil(person.imagePath, "Should return a imagePath")
 		
 		//One can only assert values, so... either assign or return a value.
 //		XCTAssertNotNil(person.image, "No Image available!")
 		//The way it works with a function with a return value.
+	}
+	
+	func testHandles() {
+		var person = Person(firstName: "Leo", lastName: "Lee", imagePath: "", twitter: nil, github: nil)
+		XCTAssertNotNil(person, "nil doesn't work here....")
+		XCTAssertNotNil(person.imagePath, "Image Path is nil")
+		XCTAssertNil(person.twitterHandle, "Twitter should be nil here.")
+		XCTAssertNil(person.githubHandle, "Github handle should be nil here.")
 	}
 }

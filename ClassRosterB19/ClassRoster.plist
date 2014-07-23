@@ -9,6 +9,10 @@
 		<string>Clem</string>
 		<key>imagePath</key>
 		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
@@ -16,6 +20,10 @@
 		<key>lastName</key>
 		<string>Johnson</string>
 		<key>imagePath</key>
+		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
 		<string></string>
 	</dict>
 	<dict>
@@ -25,6 +33,10 @@
 		<string>Gayle</string>
 		<key>imagePath</key>
 		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
@@ -32,6 +44,10 @@
 		<key>lastName</key>
 		<string>Lee</string>
 		<key>imagePath</key>
+		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
 		<string></string>
 	</dict>
 	<dict>
@@ -41,6 +57,10 @@
 		<string>Tirenin</string>
 		<key>imagePath</key>
 		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
@@ -48,6 +68,10 @@
 		<key>lastName</key>
 		<string>Adu</string>
 		<key>imagePath</key>
+		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
 		<string></string>
 	</dict>
 	<dict>
@@ -57,6 +81,10 @@
 		<string>Shabaga</string>
 		<key>imagePath</key>
 		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
@@ -64,6 +92,10 @@
 		<key>lastName</key>
 		<string>Atherton</string>
 		<key>imagePath</key>
+		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
 		<string></string>
 	</dict>
 	<dict>
@@ -73,6 +105,10 @@
 		<string>Rice</string>
 		<key>imagePath</key>
 		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>firstName</key>
@@ -80,6 +116,10 @@
 		<key>lastName</key>
 		<string>Hoang</string>
 		<key>imagePath</key>
+		<string></string>
+		<key>twitterHandle</key>
+		<string></string>
+		<key>githubHandle</key>
 		<string></string>
 	</dict>
 </array>

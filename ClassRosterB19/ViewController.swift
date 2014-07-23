@@ -8,23 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
+//MARK: Properties
 	var people = Person.loadRosterFromPlist()
 	@IBOutlet var tableView : UITableView?
 
 	//These will be replaced with the tableView and plist related methods.
 	var classRoster : Array<Person> = []
 
+//MARK: ViewController Methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.title = "B-19:iOS"
+		
 		//This is how you set it up within the code, not just in Storyboard.
 		//self.tableView!.dataSource = self
 		//self.tableView!.delegate = self
-		
-		//if classRoster.isEmpty {
-		//classRoster = createClassRoster()
-		//}
 	}
 	override func viewWillAppear(animated: Bool) {
 		tableView?.reloadData() //Can use the unwrap, but it is less safe.
@@ -32,9 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
-	}
-	
-//MARK: Functions
+	}	
 	func createClassRoster() -> [Person] {
 		var roster = [Person]()
 		//John Clem, Brad Johnson, Jeff Gayle, Leonardo Lee, Mike Tirenin, Victor Adu, Kirby Shabaga, Collin Atherton, Alex Rice, Dan Hoang
@@ -54,18 +52,17 @@ class ViewController: UIViewController, UITableViewDataSource {
 		}
 		return roster
 	}
-	
-	
-	override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-		let indexPath = tableView!.indexPathForSelectedRow()
 
-		if segue.identifier == "ShowDetail" {
-			let destination = segue.destinationViewController as DetailViewController
-			destination.person = people[indexPath.row]
-			tableView?.deselectRowAtIndexPath(indexPath, animated: true)
-		}
-	}
-	
+//MARK: Segue (Omitted)
+//	override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//		let indexPath = tableView!.indexPathForSelectedRow()
+//
+//		if segue.identifier == "ShowDetail" {
+//			let destination = segue.destinationViewController as DetailViewController
+//			destination.person = people[indexPath.row]
+//			tableView?.deselectRowAtIndexPath(indexPath, animated: true)
+//		}
+//	}
 	
 //MARK: UITableViewDataSource
 	func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
@@ -78,14 +75,21 @@ class ViewController: UIViewController, UITableViewDataSource {
 		cell.textLabel.text = personForRow.firstName
 		cell.detailTextLabel.text = personForRow.lastName
 		
-		//Image related functionality in ViewController
-//		cell.imageView.image = UIImage(named: "lamb")
-		//This will fire if the person has an image.
-//		if let personImage = personForRow.imagePath? {
-//			cell.imageView.image = UIImage(named: personImage)
-//		}
-		
+		//Addtional Feature.
+		//Cleaner way to assign an image to an imagePath, returns nil (default value) if there's not an imagePath.
+		//cell.imageView.image = UIImage(named: "lamb")
+		cell.imageView.image = UIImage(named: personForRow.imagePath)
+
 		return cell
+	}
+	
+//MARK: UITableViewDelegate
+	func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+		let detail = self.storyboard.instantiateViewControllerWithIdentifier("Detail") as DetailViewController
+		detail.person = self.people[indexPath.row]
+		if self.navigationController {
+			self.navigationController.pushViewController(detail, animated: true)
+		}
 	}
 
 }
