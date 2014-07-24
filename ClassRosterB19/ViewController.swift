@@ -22,6 +22,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		super.viewDidLoad()
 		self.title = "B-19:iOS"
 		
+		
+		//Programmatic adding of an add button: UIBarButtonItem - Ask Jeff
+		
 		//This is how you set it up within the code, not just in Storyboard.
 		//self.tableView!.dataSource = self
 		//self.tableView!.delegate = self

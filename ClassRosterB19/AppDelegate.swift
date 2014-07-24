@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
 		
+		//First place to modify set code or do multithreading tasks.
+		
+		//This is how you'd manage the creation of a view and instantiate storyboard in code.
+//		self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//		let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+//		var viewControllerExample = storyboard.instantiateViewControllerWithIdentifier("Root") as ViewController
+		
 		let nav = UINavigationController(rootViewController: self.window!.rootViewController)
 		self.window!.rootViewController = nav
 		

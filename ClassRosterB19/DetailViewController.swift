@@ -9,7 +9,7 @@
 import UIKit
 //import QuartzCore
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
 
 //MARK: Properties
 	@IBOutlet weak var firstName: UITextField!
@@ -20,6 +20,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 	
 	let navPadding = 100
 	var person: Person!
+	var photoPicker = UIImagePickerController()
 
 //MARK: ViewController Methods
     override func viewDidLoad() {
@@ -38,10 +39,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 		self.personImage.layer.borderWidth = 1.0
 		self.personImage.layer.borderColor = UIColor.lightGrayColor().CGColor
 		
-		//Delegates... why does it work now? !!! Question!!!
-		self.firstName.delegate = self
-		self.lastName.delegate = self
-		self.twitterHandle.delegate = self
+		//Delegates... why does it work now? !!! Question!!! Answer: Delegate can be set in Storyboard.
+		//self.firstName.delegate = self
+		//self.lastName.delegate = self
+		//self.twitterHandle.delegate = self
 		self.githubHandle.delegate = self
 
     }
@@ -118,4 +119,32 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
+//MARK: UIImagePicker and Control
+	@IBAction func choosePhoto(sender: AnyObject) {
+//		1. Is source type available
+//		2. Check media,
+//		3.?
+//		4.Present UI with the presentViewController:animated:completion
+//		This is done using a popover.
+		
+		println("Hello!")
+		
+		
+//		if photoPicker.isSourceType
+//		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//		photoPicker.delegate = self
+		
+		
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
