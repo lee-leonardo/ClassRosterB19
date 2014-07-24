@@ -7,11 +7,11 @@
 //
 
 import UIKit
+//import QuartzCore
 
 class DetailViewController: UIViewController, UITextFieldDelegate {
 
 //MARK: Properties
-	var person: Person!
 	@IBOutlet weak var firstName: UITextField!
 	@IBOutlet weak var lastName: UITextField!
 	@IBOutlet weak var personImage: UIImageView!
@@ -19,6 +19,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var githubHandle: UITextField!
 	
 	let navPadding = 100
+	var person: Person!
 
 //MARK: ViewController Methods
     override func viewDidLoad() {
@@ -30,12 +31,18 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
 		self.lastName.text = person.lastName
 		self.twitterHandle.text = person.twitterHandle
 		self.githubHandle.text = person.githubHandle
-
+		
 		//These only fire if the person has these option statements. It leaves the area blank if it does not have a value.
 		//This is fine here because this is data. Use viewWillAppear if I am manipulating the view (or building it from scratch).
 		self.personImage.image = UIImage(named: person.imagePath)
 		self.personImage.layer.borderWidth = 1.0
 		self.personImage.layer.borderColor = UIColor.lightGrayColor().CGColor
+		
+		//Delegates... why does it work now? !!! Question!!!
+		self.firstName.delegate = self
+		self.lastName.delegate = self
+		self.twitterHandle.delegate = self
+		self.githubHandle.delegate = self
 
     }
 	override func viewWillAppear(animated: Bool) {
@@ -61,33 +68,37 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 	
-//MARK: TextField
+//MARK: UITextFieldDelegate
 	//Tried to do this from notes, I had to copy...
 	func textFieldDidBeginEditing(textField: UITextField!) {
-		println("Being editing")
+//		println("Being editing")
 		
 		//So the trick I figure out takes the bounds of the container view, and moves all subViews in relation to it. Wonderful trick! Gotta commit it to my skills.
 		let baseWidth = self.view.bounds.width
 		let baseHeight = self.view.bounds.height
 		let newY = 0 + textField.frame.origin.y - self.navPadding //This is a bit tricky, so it's a good trick to remember.
-		let currentX = textField.frame.origin.x
+		let currentX = self.view.bounds.origin.x
 		
 		//Got to read more about closures and master using them.
-		UIView.animateWithDuration(0.3, animations: { () -> Void in
-			self.view.bounds = CGRect(x: currentX, y: newY, width: baseWidth, height: baseHeight)
+		UIView.animateWithDuration(0.3, animations:{ () -> Void
+			in
+				self.view.bounds = CGRect(x: currentX, y: newY, width: baseWidth, height: baseHeight)
+//			Offset
+//				self.view.transform = CGAffineTransformTranslate(self.view.transform, 0.0, -120.0)
 		})
 	}
 	func textFieldDidEndEditing(textField: UITextField!) {
-		println("End Editing")
+//		println("End Editing")
 		
 		let currentWidth = self.view.bounds.width
 		let currentHeight = self.view.bounds.height
-		UIView.animateWithDuration(0.3, animations: { () -> Void in
-			self.view.bounds = CGRect(x: 0, y: 0, width: currentWidth, height: currentHeight)
+		UIView.animateWithDuration(0.3, animations:{ () -> Void
+			in
+				self.view.bounds = CGRect(x: 0, y: 0, width: currentWidth, height: currentHeight)
 			})
 
 		//Demonstrates how to do this with CGAffines and using the expression closures special syntax.
-//		UIView.animateWithDuration(0.3) { () -> Void in
+//		UIView.animateWithDuration(0.3) {
 //			self.view.bounds = CGRect(x: 0, y: 0, width: currentWidth, height: currentHeight)
 //			self.view.transform = CGAffineTransformTranslate(self.view.transform, 0.0, 120.0)
 //			}
