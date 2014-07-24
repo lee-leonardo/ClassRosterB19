@@ -9,7 +9,7 @@
 import UIKit
 //import QuartzCore
 
-class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
 //MARK: Properties
 	@IBOutlet weak var firstName: UITextField!
@@ -20,7 +20,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 	
 	let navPadding = 100
 	var person: Person!
-	var photoPicker = UIImagePickerController()
 
 //MARK: ViewController Methods
     override func viewDidLoad() {
@@ -32,6 +31,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 		self.lastName.text = person.lastName
 		self.twitterHandle.text = person.twitterHandle
 		self.githubHandle.text = person.githubHandle
+		
+		//Attributed to Jeff Gaylefor his hard coded bar button Item.
+		let pictureButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Camera, target: self, action: "choosePhoto")
+		self.navigationItem.rightBarButtonItem = pictureButton
 		
 		//These only fire if the person has these option statements. It leaves the area blank if it does not have a value.
 		//This is fine here because this is data. Use viewWillAppear if I am manipulating the view (or building it from scratch).
@@ -120,21 +123,41 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
 	}
 	
 //MARK: UIImagePicker and Control
-	@IBAction func choosePhoto(sender: AnyObject) {
+	func choosePhoto() {
 //		1. Is source type available
 //		2. Check media,
 //		3.?
 //		4.Present UI with the presentViewController:animated:completion
 //		This is done using a popover.
 		
-		println("Hello!")
+		println("Choose Photo fires off.")
 		
+		var photoPicker = UIImagePickerController()
+		photoPicker.delegate = self
+//		photoPicker.editing = true
 		
-//		if photoPicker.isSourceType
-//		photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-//		photoPicker.delegate = self
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+			photoPicker.sourceType = UIImagePickerControllerSourceType.Camera
+		} else {
+//			photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+			photoPicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+		}
 		
+		self.presentViewController(photoPicker, animated: true, completion: nil)
+	}
+	
+	//Taking what Jeff did with this. I am adding functionality to save this Image to my documents directory, where I'll grab a URL to use a imagePath.
+	func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
+		println("Did Finish Picking fires off.")
+		println("Info Object:\n\(info)\n\n")
 		
+		let media = info[UIImagePickerControllerOriginalImage] as UIImage
+//		println("Media Object:\n\(media)")
+//		println("\(media.imageAsset)")
+		
+		self.personImage.image = media
+//		self.personImage
+		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 	
 }

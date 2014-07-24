@@ -152,46 +152,20 @@
                                     <outlet property="delegate" destination="kc1-yV-Ue8" id="qzB-Ls-zhf"/>
                                 </connections>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CG2-Cb-Dzq">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Oe9-Se-EwY"/>
-                                    <barButtonItem systemItem="camera" id="Rzo-4Q-ICA">
-                                        <connections>
-                                            <action selector="choosePhoto:" destination="kc1-yV-Ue8" id="ylB-RV-Fc8"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PFq-N1-n4Q"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="CG2-Cb-Dzq" secondAttribute="centerX" id="1Yd-PJ-qej"/>
                             <constraint firstItem="d9Q-Cd-v7n" firstAttribute="top" secondItem="RjO-Kj-Dca" secondAttribute="bottom" constant="8" id="346-4p-jJU"/>
                             <constraint firstItem="KEc-md-9QK" firstAttribute="leading" secondItem="pWI-X2-nok" secondAttribute="leading" id="3B2-L2-EAd"/>
                             <constraint firstAttribute="centerX" secondItem="RjO-Kj-Dca" secondAttribute="centerX" id="8CU-Ol-aOz"/>
-                            <constraint firstItem="qyM-Ud-qQo" firstAttribute="top" secondItem="CG2-Cb-Dzq" secondAttribute="bottom" id="Cnz-SG-e0S"/>
                             <constraint firstItem="KEc-md-9QK" firstAttribute="leading" secondItem="RjO-Kj-Dca" secondAttribute="leading" id="DDb-j4-RgH"/>
-                            <constraint firstAttribute="centerX" secondItem="CG2-Cb-Dzq" secondAttribute="centerX" id="Gcb-g9-r6L"/>
                             <constraint firstItem="RjO-Kj-Dca" firstAttribute="top" secondItem="3fS-dj-wiG" secondAttribute="bottom" constant="20" symbolic="YES" id="HPf-Va-9JV"/>
                             <constraint firstItem="j6S-i6-uZl" firstAttribute="top" secondItem="pWI-X2-nok" secondAttribute="bottom" constant="8" id="T27-4R-eEH"/>
                             <constraint firstItem="pWI-X2-nok" firstAttribute="top" secondItem="d9Q-Cd-v7n" secondAttribute="bottom" constant="8" id="Ue3-4r-vvG"/>
                             <constraint firstItem="KEc-md-9QK" firstAttribute="leading" secondItem="d9Q-Cd-v7n" secondAttribute="leading" id="aKp-iu-lhG"/>
                             <constraint firstItem="KEc-md-9QK" firstAttribute="leading" secondItem="j6S-i6-uZl" secondAttribute="leading" id="hoX-Ik-GzY"/>
-                            <constraint firstItem="qyM-Ud-qQo" firstAttribute="top" secondItem="CG2-Cb-Dzq" secondAttribute="bottom" id="nbp-f2-unp"/>
-                            <constraint firstItem="CG2-Cb-Dzq" firstAttribute="leading" secondItem="s9w-2m-o8e" secondAttribute="leading" id="pI5-QR-9j4"/>
-                            <constraint firstItem="CG2-Cb-Dzq" firstAttribute="leading" secondItem="s9w-2m-o8e" secondAttribute="leading" id="vCW-dT-am4"/>
-                            <constraint firstAttribute="trailing" secondItem="CG2-Cb-Dzq" secondAttribute="trailing" id="wPA-0G-UHA"/>
                             <constraint firstItem="KEc-md-9QK" firstAttribute="top" secondItem="j6S-i6-uZl" secondAttribute="bottom" constant="8" id="ybm-5j-gmQ"/>
                         </constraints>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="1Yd-PJ-qej"/>
-                                <exclude reference="pI5-QR-9j4"/>
-                                <exclude reference="nbp-f2-unp"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="hWC-xc-hi1"/>
                     <connections>
