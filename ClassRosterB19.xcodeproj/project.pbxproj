@@ -22,6 +22,8 @@
 		387946DE197D89E7005813F5 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387946DD197D89E7005813F5 /* PersonTests.swift */; };
 		387946E0197D8ACF005813F5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387946DF197D8ACF005813F5 /* Person.swift */; };
 		387946E1197D8B62005813F5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387946DF197D8ACF005813F5 /* Person.swift */; };
+		38C58B731982F8C400DBAB42 /* ExtDocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C58B721982F8C400DBAB42 /* ExtDocumentsDirectory.swift */; };
+		38DB27D119830B5600D6612E /* ExtDocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C58B721982F8C400DBAB42 /* ExtDocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		387946D0197D8777005813F5 /* ClassRosterB19Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRosterB19Tests.swift; sourceTree = "<group>"; };
 		387946DD197D89E7005813F5 /* PersonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		387946DF197D8ACF005813F5 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		38C58B721982F8C400DBAB42 /* ExtDocumentsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtDocumentsDirectory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,7 @@
 			children = (
 				387946BF197D8777005813F5 /* ViewController.swift */,
 				38753AE5197EFEC600648259 /* DetailViewController.swift */,
+				38C58B721982F8C400DBAB42 /* ExtDocumentsDirectory.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -268,6 +272,7 @@
 			files = (
 				387946E0197D8ACF005813F5 /* Person.swift in Sources */,
 				387946C0197D8777005813F5 /* ViewController.swift in Sources */,
+				38C58B731982F8C400DBAB42 /* ExtDocumentsDirectory.swift in Sources */,
 				387946BE197D8777005813F5 /* AppDelegate.swift in Sources */,
 				38753AE6197EFEC600648259 /* DetailViewController.swift in Sources */,
 			);
@@ -281,6 +286,7 @@
 				387946E1197D8B62005813F5 /* Person.swift in Sources */,
 				387946DE197D89E7005813F5 /* PersonTests.swift in Sources */,
 				38753AE7197EFEC600648259 /* DetailViewController.swift in Sources */,
+				38DB27D119830B5600D6612E /* ExtDocumentsDirectory.swift in Sources */,
 				38753AE9197F05BE00648259 /* DetailViewControllerTests.swift in Sources */,
 				384EF441197DBD670052035F /* ViewControllerTests.swift in Sources */,
 				387946D1197D8777005813F5 /* ClassRosterB19Tests.swift in Sources */,

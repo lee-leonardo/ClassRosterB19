@@ -54,5 +54,18 @@ class ViewControllerTests: XCTestCase {
 		controller.viewDidLoad()
 		
 	}
+	func testDocumentsDirectory() {
+		var controller = ViewController()
+		controller.viewDidLoad()
+		
+		var doc = controller.documentsDirectory()
+		//println("\(doc)")
+		var path = controller.dataFilePath()
+		//println("\(path)")
+		
+		XCTAssertNotNil(doc, "Documents Directory Exists")
+		XCTAssertNotNil(path, "Data File Path exists")
+		
+	}
 
 }

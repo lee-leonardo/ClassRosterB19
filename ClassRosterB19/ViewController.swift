@@ -28,6 +28,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		//This is how you set it up within the code, not just in Storyboard.
 		//self.tableView!.dataSource = self
 		//self.tableView!.delegate = self
+		
+		//println("\(self.documentsDirectory())")
+		//println("\(self.dataFilePath())")
+		
 	}
 	override func viewWillAppear(animated: Bool) {
 		tableView?.reloadData() //Can use the unwrap, but it is less safe.
@@ -94,6 +98,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 			self.navigationController.pushViewController(detail, animated: true)
 		}
 	}
-
 }
 
