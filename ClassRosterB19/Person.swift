@@ -9,10 +9,12 @@
 import UIKit
 
 class Person {
+//	: NSCoder {
 //MARK: Properties
 	var firstName : String
 	var lastName : String
 	var imagePath : String?
+	var imageTemp: UIImage?
 	var twitterHandle : String?
 	var githubHandle : String?
 	
@@ -66,4 +68,17 @@ class Person {
 		return roster
 		
 	}
+//MARK: NSCoder
+//	func encodeWithCoder(aCoder: NSCoder!) {
+//		//aCoder.encodeObject(<#objv: AnyObject?#>, forKey: <#String?#>)
+//	}
+//	init(coder aDecoder: NSCoder!) {
+//		self.firstName: String
+//		self.lastName: String
+//		self.imagePath: String
+//		self.
+//		aDecoder.encodeObject(self.firstName, forKey: "firstName")
+//		aDecoder.encodeObject(self.lastName, forKey: "lastName")
+//		
+//	}
 }

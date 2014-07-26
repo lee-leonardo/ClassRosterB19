@@ -38,7 +38,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 		
 		//These only fire if the person has these option statements. It leaves the area blank if it does not have a value.
 		//This is fine here because this is data. Use viewWillAppear if I am manipulating the view (or building it from scratch).
-		self.personImage.image = UIImage(named: person.imagePath)
+//		if let path = self.person.imagePath {
+//			
+//		} else {
+			self.personImage.image = self.person.imageTemp
+//		}
 		self.personImage.layer.borderWidth = 1.0
 		self.personImage.layer.borderColor = UIColor.lightGrayColor().CGColor
 		
@@ -63,6 +67,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 		person.firstName = firstName.text
 		person.lastName = lastName.text
 //		person.imagePath = personImage
+		person.imageTemp = personImage.image
 		person.twitterHandle = twitterHandle.text
 		person.githubHandle = githubHandle.text
 	}
@@ -148,15 +153,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
 	
 	//Taking what Jeff did with this. I am adding functionality to save this Image to my documents directory, where I'll grab a URL to use a imagePath.
 	func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
-		println("Did Finish Picking fires off.")
-		println("Info Object:\n\(info)\n\n")
+//		println("Did Finish Picking fires off.")
+//		println("Info Object:\n\(info)\n\n")
 		
 		let media = info[UIImagePickerControllerOriginalImage] as UIImage
 //		println("Media Object:\n\(media)")
 //		println("\(media.imageAsset)")
 		
 		self.personImage.image = media
-//		self.personImage
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
 	

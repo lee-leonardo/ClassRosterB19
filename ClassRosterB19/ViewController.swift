@@ -85,7 +85,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		//Addtional Feature.
 		//Cleaner way to assign an image to an imagePath, returns nil (default value) if there's not an imagePath.
 		//cell.imageView.image = UIImage(named: "lamb")
-		cell.imageView.image = UIImage(named: personForRow.imagePath)
+		if let hasImagePath = personForRow.imagePath {
+			cell.imageView.image = UIImage(named: hasImagePath)
+		} else {
+			cell.imageView.image = personForRow.imageTemp
+		}
+		
 
 		return cell
 	}
